@@ -4,9 +4,115 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Project 4 - Sam & Shielarose</title>
+   <title>SmartyPants</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+   <div class="wrapper">
+      <header>
+         <h1>SmartyPants</h1>
+         <p>Test your knowledge of different categories! Are you the ultimate SmartyPants?</p>
+      </header>
+      <main>
+         <div class="user-selection">
+            <div class="difficulty">
+               <h2>Select difficulty level:</h2>
+               <form action="" class="difficulty-form form">
+                  <fieldset>
+                     <label for="easy" class="difficulty-level label">Easy</label>
+                     <input type="radio" id="easy"  name="difficulty-level">
+   
+                     <label for="med" class="difficulty-level label">Medium</label>
+                     <input type="radio" id="med" name="difficulty-level" checked>
+   
+                     <label for="hard" class="difficulty-level label">Hard</label>
+                     <input type="radio" id="hard" name="difficulty-level">
+                  </fieldset>
+               </form>
+            </div>
+            <div class="categories">
+               <h2>Select Category:</h2>
+               <form action="" class="category-form form">
+                  <fieldset>
+                     <label for="general" class="category-type label">General Knowledge</label>
+                     <input type="radio" name="category" id="general">
+   
+                     <label for="books" class="category-type label">Books</label>
+                     <input type="radio" name="category" id="books">
+   
+                     <label for="film" class="category-type label">Film</label>
+                     <input type="radio" name="category" id="film">
+   
+                     <label for="music" class="category-type label">Music</label>
+                     <input type="radio" name="category" id="music">
+   
+                     <label for="tv" class="category-type label">Television</label>
+                     <input type="radio" name="category" id="tv">
+   
+                     <label for="science" class="category-type label">Science</label>
+                     <input type="radio" name="category" id="science">
+   
+                     <label for="sports" class="category-type label">Sports</label>
+                     <input type="radio" name="category" id="sports">
+   
+                     <label for="geography" class="category-type label">Geography</label>
+                     <input type="radio" name="category" id="geography">
+   
+                     <label for="history" class="category-type label">History</label>
+                     <input type="radio" name="category" id="history">
+   
+                     <label for="art" class="category-type label">Art</label>
+                     <input type="radio" name="category" id="art">
+   
+                     <label for="celebs" class="category-type label">Celebrities</label>
+                     <input type="radio" name="category" id="celebs">
+   
+                     <label for="animals" class="category-type label">Animals</label>
+                     <input type="radio" name="category" id="animals">
+                  </fieldset>
+               </form>
+            </div>
+            <div class="question-container">
+               <form action="" class="question-form form">
+                  <div class="question-box">
+                     <p class="question" id="question">Question</p>
+                  </div>
+                  <div class="answer-box">
+                     <fieldset>
+                        <label for="option1">answer1</label>
+                        <input type="radio" name="answer-option" id="option1">
+
+                        <label for="option2">answer2</label>
+                        <input type="radio" name="answer-option" id="option2">
+
+                        <label for="option3">answer3</label>
+                        <input type="radio" name="answer-option" id="option3">
+
+                        <label for="option4">answer4</label>
+                        <input type="radio" name="answer-option" id="option4">
+                     </fieldset>
+                     <div class="answer-bottom">
+                        <div class="question-tracker">/10</div>
+                        <button class="next">Next</button>
+                     </div>
+                  </div>
+
+               </form>
+            </div>
+
+         </div>
+      </main>
+
+
+
+
+   </div>
+
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="scripts/app.js"></script>
    
 </body>
 </html>
