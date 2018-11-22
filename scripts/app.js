@@ -1,5 +1,20 @@
 const app = {};
 
+// main variables
+// counts user score
+app.score = 0;
+
+//question counter
+app.questionCount = 0;
+
+// user answer choice
+app.userAnswer;
+
+// stores index of correct answer in answer array
+// if correctAnswerIndex == userAnswer, score increases by 1
+app.correctAnswerIndex;
+
+
 // get questions from API 
 app.getQuestions = function(category){
    $.ajax({
@@ -9,7 +24,9 @@ app.getQuestions = function(category){
    }).then(res => {
       // console.log(res.results);
       // app.chosenCategory(res.results)
-      app.displayQuestion(res.results)
+      // app.displayQuestion(res.results)
+      app.updateQuestion(res.results);
+
    });
 };
 
@@ -22,17 +39,72 @@ app.listenForChange = function(){
    });
 };
 
-// Display questions on page
-app.displayQuestion = function(questionContainer){
-   $("#question-container").empty();
-   questionContainer.forEach((questionObject) => {
-      app.question = $("<h3>").addClass("question-heading").html(questionObject.question);
-      app.correctAnswer = $("<ul><li>").html(questionObject.correct_answer);
-      app.incorrectAnswers = $("<li>").html(questionObject.incorrect_answers);
-      app.completeQuestion = $("<div>").addClass("complete-question").append(app.question, app.correctAnswer, app.incorrectAnswers);
-      $("#question-container").append(app.completeQuestion);
-      });
+
+
+// // Display questions on page
+// app.displayQuestion = function (questionContainer) {
+//    $("#question-container").empty();
+//    questionContainer.forEach((questionObject) => {
+//       app.question = $("<h3>").addClass("question-heading").html(questionObject.question);
+//       // app.rightAnswer = $("<li>").html(questionObject.correct_answer);
+//       // app.wrongAnswers = $("<li>").html(questionObject.incorrect_answers);
+//       app.completeQuestion = $("<div>").addClass("complete-question").append(app.question, app.correctAnswer, app.incorrectAnswers);
+//       $("#question-container").append(app.completeQuestion);
+//    });
+// };
+
+app.updateQuestion = function(question){
+   // Create an array of all the answers
+   app.answers = [];
+
+   // Create a variable for the correct answer
+   app.correctAnswer = question[app.questionCount].correct_answer;
+   $(".answers").empty();
+
+   // Push the individual incorrect answers into the new answer array
+   question[app.questionCount].incorrect_answers.forEach(answer => {
+      app.answers.push(answer)
+   });
+
+   // Add the correct answer into the new answer array at a random index
+   app.answers.splice(Math.floor(Math.random() * 4), 0, app.correctAnswer);
+
+   // Track the index of the correct answer
+   app.correctAnswerIndex = app.answers.indexOf(app.correctAnswer);
+
+   //Append questions and answers to the DOM
+   $(".question").html(question[app.questionCount].question);
+   for (let i = 0; i < app.answers.length; i++){
+      //create label elements
+      $(".answers").append(`<label for="${app.answers[i]}" class="answer-option">${app.answers[i]}</label>`);
+      
+      // //create input elements
+      $(".answers").append(`<input type="radio" id="${app.answers[i]}" name="answer">`);
+   };
+
+   $(".answer-option").on("click", function(event){
+      app.userAnswer = event.target.id;
+
+      if(app.userAnswer) === app.correctAnswerIndex) {
+         console.log("CORRECT");
+      } else {
+         console.log("WRONG");
+      }
+
+   });
+
+
+
+   console.log(app.answers);
+
 };
+
+
+
+// Spread the incorrect answers out
+
+// Create a new array of answers
+// Push the correct answer into the new array of answers at a random index 
 
 
       
