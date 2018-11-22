@@ -76,28 +76,38 @@ app.updateQuestion = function(question){
    $(".question").html(question[app.questionCount].question);
    for (let i = 0; i < app.answers.length; i++){
       //create label elements
-      $(".answers").append(`<label for="${app.answers[i]}" class="answer-option">${app.answers[i]}</label>`);
+       $(".answers").append(`<label for="${app.answers[i]}"  data-index="${i}" class="answer-option">${app.answers[i]}</label>`);
       
       // //create input elements
       $(".answers").append(`<input type="radio" id="${app.answers[i]}" name="answer">`);
    };
 
-   $(".answer-option").on("click", function(event){
-      app.userAnswer = event.target.id;
+   $(".answer-option").on("click", function () {
+       app.userAnswer = $(this).data('index');
+       console.log(app.userAnswer, app.correctAnswerIndex);
 
-      if(app.userAnswer) === app.correctAnswerIndex) {
-         console.log("CORRECT");
-      } else {
-         console.log("WRONG");
-      }
+       if (app.userAnswer == app.correctAnswerIndex) {
+           console.log ("CORRECT!!!!");
+           $(this).addClass('correct');
+           $("fieldset").prop("disabled", true);
+       } else {
+           console.log ("The price is wrong, bitch!");
+           $(this).addClass('incorrect');
+           $(".answer-option").find(`[data-index='${app.correctAnswerIndex}'`).addClass('correct');
+           $("fieldset").prop("disabled", true);
+
+       }
 
    });
 
 
 
-   console.log(app.answers);
 
-};
+
+
+//    console.log(app.answers);
+
+ };
 
 
 
