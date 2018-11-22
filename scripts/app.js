@@ -10,8 +10,7 @@ app.questionCount = 0;
 // user answer choice
 app.userAnswer;
 
-// stores index of correct answer in answer array
-// if correctAnswerIndex == userAnswer, score increases by 1
+// stores the index of correct answer in answer array
 app.correctAnswerIndex;
 
 
@@ -22,9 +21,6 @@ app.getQuestions = function(category){
       method: 'GET',
       dataType: 'json',
    }).then(res => {
-      // console.log(res.results);
-      // app.chosenCategory(res.results)
-      // app.displayQuestion(res.results)
       app.updateQuestion(res.results);
 
    });
@@ -41,70 +37,67 @@ app.listenForChange = function(){
 
 
 
-// // Display questions on page
-// app.displayQuestion = function (questionContainer) {
-//    $("#question-container").empty();
-//    questionContainer.forEach((questionObject) => {
-//       app.question = $("<h3>").addClass("question-heading").html(questionObject.question);
-//       // app.rightAnswer = $("<li>").html(questionObject.correct_answer);
-//       // app.wrongAnswers = $("<li>").html(questionObject.incorrect_answers);
-//       app.completeQuestion = $("<div>").addClass("complete-question").append(app.question, app.correctAnswer, app.incorrectAnswers);
-//       $("#question-container").append(app.completeQuestion);
-//    });
-// };
+//once they select a category, put questions/answers on page
+    app.updateQuestion = function(question){
+    // Create an array of all the answers
+    app.answers = [];
 
-app.updateQuestion = function(question){
-   // Create an array of all the answers
-   app.answers = [];
-
-   // Create a variable for the correct answer
+// Create a variable for the correct answer
    app.correctAnswer = question[app.questionCount].correct_answer;
    $(".answers").empty();
 
-   // Push the individual incorrect answers into the new answer array
+// Push the individual incorrect answers into the new answer array
    question[app.questionCount].incorrect_answers.forEach(answer => {
       app.answers.push(answer)
    });
 
-   // Add the correct answer into the new answer array at a random index
+// Add the correct answer into the new answer array at a random index
    app.answers.splice(Math.floor(Math.random() * 4), 0, app.correctAnswer);
 
-   // Track the index of the correct answer
+// Track the index of the correct answer
    app.correctAnswerIndex = app.answers.indexOf(app.correctAnswer);
 
-   //Append questions and answers to the DOM
+//Append questions and answers to the DOM
    $(".question").html(question[app.questionCount].question);
+       
    for (let i = 0; i < app.answers.length; i++){
       //create label elements
-      $(".answers").append(`<label for="${app.answers[i]}" class="answer-option">${app.answers[i]}</label>`);
+       $(".answers").append(`<label for="${app.answers[i]}"  data-index="${i}" class="answer-option">${app.answers[i]}</label>`);
       
       // //create input elements
       $(".answers").append(`<input type="radio" id="${app.answers[i]}" name="answer">`);
    };
 
-   $(".answer-option").on("click", function(event){
-      app.userAnswer = event.target.id;
+//on click of answer label, check if user's answer is correct or incorrect
+   $(".answer-option").on("click", function () {
+       app.userAnswer = $(this).data('index');
+       console.log(app.userAnswer, app.correctAnswerIndex);
 
-      if(app.userAnswer) === app.correctAnswerIndex) {
-         console.log("CORRECT");
-      } else {
-         console.log("WRONG");
-      }
-
+       if (app.userAnswer == app.correctAnswerIndex) {
+           console.log ("CORRECT!!!!");
+           $(this).addClass("correct");
+           $(".answers").prop("disabled", true);
+       } else {
+           console.log ("The price is wrong, bitch!");
+           $(this).addClass("incorrect");
+           $(`.answer-option[data-index=${app.correctAnswerIndex}]`).addClass("correct");
+           $(".answers").prop("disabled", true);
+       }
    });
+ };
+
+ //remove default settings of the 'next' submit button, listen for click to go to next question
+$(".next").on("click", function (e) {
+    e.preventDefault();
+ 
+})
 
 
 
-   console.log(app.answers);
-
-};
 
 
 
-// Spread the incorrect answers out
 
-// Create a new array of answers
-// Push the correct answer into the new array of answers at a random index 
 
 
       
