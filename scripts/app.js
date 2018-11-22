@@ -1,58 +1,45 @@
 const app = {};
 
-// Category numbers
-app.generalKnowledge = 9;
-app.books = 10;
-app.film = 11;
-app.music = 12;
-app.tv = 14;
-app.science = 17;
-app.sports = 21;
-app.geography = 22;
-app.his = 23;
-app.politics = 24;
-app.art = 25;
-app.celebs = 26;
-app.animals = 27;
-
-// Difficulty type
-app.easy = 'easy';
-app.med = 'medium';
-app.hard = 'hard';
-
 // get questions from API 
-app.getQuestions = function(category, difficulty){
+app.getQuestions = function(category){
    $.ajax({
-      url: `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`,
+      url: `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=medium&type=multiple`,
       method: 'GET',
       dataType: 'json',
    }).then(res => {
       // console.log(res.results);
+      // app.chosenCategory(res.results)
+      app.displayQuestion(res.results)
    });
-
 };
 
-$(".category-type").on("change", function(){
-   app.userCategoryChoice = $(".category-type:checked");
-   app.getQuestions(app.userCategoryChoice, app.med);
-});
-// // MEDIUM QUESTIONS
-// app.getQuestions(app.generalKnowledge, app.med);
-// app.getQuestions(app.books, app.med);
-// app.getQuestions(app.film, app.med);
-// app.getQuestions(app.music, app.med);
-// app.getQuestions(app.tv, app.med);
-// app.getQuestions(app.science, app.med);
-// app.getQuestions(app.sports, app.med);
-// app.getQuestions(app.geography, app.med);
-// app.getQuestions(app.his, app.med);
-// app.getQuestions(app.politics, app.med);
-// app.getQuestions(app.celebs, app.med);
-// app.getQuestions(app.animals, app.med);
 
+// Listen for when user clicks on a category and pull the array of questions relating to that category from API
+app.listenForChange = function(){
+   $(".category-name").on("click", function(){
+      app.chosenCategory = $(this).val();
+      app.getQuestions(app.chosenCategory);
+   });
+};
+
+// Display questions on page
+app.displayQuestion = function(questionContainer){
+   $("#question-container").empty();
+   questionContainer.forEach((questionObject) => {
+      app.question = $("<h3>").addClass("question-heading").html(questionObject.question);
+      app.correctAnswer = $("<ul><li>").html(questionObject.correct_answer);
+      app.incorrectAnswers = $("<li>").html(questionObject.incorrect_answers);
+      app.completeQuestion = $("<div>").addClass("complete-question").append(app.question, app.correctAnswer, app.incorrectAnswers);
+      $("#question-container").append(app.completeQuestion);
+      });
+};
+
+
+      
+      
 
 app.init = function(){
-   // app.getQuestions();
+   app.listenForChange();
 };
 
 $(function(){
