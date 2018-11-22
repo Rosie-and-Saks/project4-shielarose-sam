@@ -22,7 +22,17 @@ app.getQuestions = function(category){
       dataType: 'json',
    }).then(res => {
       app.updateQuestion(res.results);
-
+       $(".next").on("click", function (e) {
+            //remove default settings of the 'next' submit button, listen for click to go to next question
+           e.preventDefault();
+           
+            //update question count on quiz going up to 10, and update question tracker
+           if (app.questionCount < 10) {
+               app.questionCount++;
+               app.updateQuestion(res.results);
+               $(".question-tracker span").html(app.questionCount + 1);
+           }
+       })
    });
 };
 
@@ -36,9 +46,8 @@ app.listenForChange = function(){
 };
 
 
-
 //once they select a category, put questions/answers on page
-    app.updateQuestion = function(question){
+app.updateQuestion = function(question){
     // Create an array of all the answers
     app.answers = [];
 
@@ -67,7 +76,7 @@ app.listenForChange = function(){
       // //create input elements
       $(".answers").append(`<input type="radio" id="${app.answers[i]}" name="answer">`);
    };
-
+   
 //on click of answer label, check if user's answer is correct or incorrect
    $(".answer-option").on("click", function () {
        app.userAnswer = $(this).data('index');
@@ -76,6 +85,8 @@ app.listenForChange = function(){
        if (app.userAnswer == app.correctAnswerIndex) {
            console.log ("CORRECT!!!!");
            $(this).addClass("correct");
+           app.score++;
+        //    console.log(app.score);
            $(".answers").prop("disabled", true);
        } else {
            console.log ("The price is wrong, bitch!");
@@ -85,23 +96,6 @@ app.listenForChange = function(){
        }
    });
  };
-
- //remove default settings of the 'next' submit button, listen for click to go to next question
-$(".next").on("click", function (e) {
-    e.preventDefault();
- 
-})
-
-
-
-
-
-
-
-
-
-      
-      
 
 app.init = function(){
    app.listenForChange();
