@@ -466,6 +466,15 @@ h2 {
   -ms-flex-line-pack: center;
   align-content: center; }
 
+footer {
+  background: #282a2d;
+  padding: 20px; }
+  footer p, footer a {
+    text-align: center;
+    color: #FAFAFA;
+    text-decoration: none;
+    margin: 5px; }
+
 @media (max-width: 611px) {
   main {
     height: auto; }
