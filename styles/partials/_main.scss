@@ -19,7 +19,6 @@ h2 {
    display:flex;
    flex-wrap: wrap;
    justify-content: center;   
-   border: none;
    label {
       @extend .button;
       position: relative;
@@ -30,7 +29,7 @@ h2 {
       top: 0;
       left: 0;
       box-shadow: 3px 3px 0 $text-color;
-      padding: 20px 10px;
+      padding: 20px 5px;
       margin: 5px;
       &:active {
          box-shadow: none;
@@ -48,4 +47,42 @@ h2 {
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   border: 1px solid tomato;
+}
+
+.question-form {
+   border: 1px solid blue;
+   width: 100%;
+   h3 {
+      font-family: $title-font;
+      @include base-font(50);
+      margin: 25px 0;
+      letter-spacing: 1.5px;
+      position: relative;
+      z-index: 1;
+   }
+}
+
+.answer-box {
+   .answers {
+      display: flex;
+      flex-direction: column;
+   }
+   .answer-option {
+      background: $heading-color;
+      margin: 7px 0;
+      padding: 20px;
+      border-radius: 5px;
+   }
+}
+
+.answer-bottom {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.next {
+   @extend .button;
+   box-shadow: none;
 }

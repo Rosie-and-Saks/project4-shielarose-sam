@@ -6,6 +6,7 @@ html {
 body {
    background: #f3f9fc;
    @include base-font(20);
+   font-family: $text-font;
 }
 
 .wrapper {
@@ -14,9 +15,13 @@ body {
    margin: 0 auto;
 }
 
-// input {
-//    display: none;
-// }
+input {
+   display: none;
+}
+
+fieldset {
+   border: none;
+}
 
 label {
    cursor: pointer;
@@ -32,6 +37,7 @@ label {
    font-weight: 700;
    letter-spacing: 0.5px;
    background: $accent-color;
+   border: none;
    box-shadow: 
    1px 1px 0px $text-color,
    2px 2px 0px $text-color,
