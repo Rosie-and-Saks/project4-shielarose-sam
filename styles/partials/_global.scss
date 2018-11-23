@@ -7,6 +7,7 @@ body {
    background: #f3f9fc;
    @include base-font(20);
    font-family: $text-font;
+   color: $text-color;
 }
 
 .wrapper {

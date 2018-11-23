@@ -82,6 +82,9 @@ h2 {
 .next {
    @include button($accent-color);
    padding: 10px 50px;
+   &:hover {
+      background-color: $hover-accent;
+   }
 }
 
 .question-tracker {
@@ -98,21 +101,21 @@ h2 {
 .correct::after {
    font-family: "Font Awesome 5 Free";
    content: "\f058";
-   @include base-font(40);
+   @include base-font(50);
    color: $correct-color;
    position: absolute;
    top: calc(50% - 23px);
-   right: -50px;
+   right: -60px;
 }
 
 .incorrect::after {
    font-family: "Font Awesome 5 Free";
    content: "\f057";
-   @include base-font(40);
+   @include base-font(50);
    color: $wrong-color;
    position: absolute;
    top: calc(50% - 23px);
-   right: -50px;
+   right: -60px;
 }
 
 
