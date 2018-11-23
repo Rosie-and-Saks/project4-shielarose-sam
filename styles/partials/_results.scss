@@ -7,4 +7,15 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    z-index: 10;
+    margin: 0 auto;
+    background: $heading-color;
+}
+
+.results-box {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-content: center;
 }
