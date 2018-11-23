@@ -168,9 +168,6 @@ body {
   width: 80%;
   margin: 0 auto; }
 
-input {
-  display: none; }
-
 label {
   cursor: pointer; }
 
@@ -307,11 +304,6 @@ h2 {
 
 .hidden {
   display: none; }
-
-.results {
-  position: absolute;
-  top: 0;
-  left: 0; }
 
 @media (max-width: 611px) {
   main {

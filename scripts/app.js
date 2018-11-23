@@ -13,6 +13,9 @@ app.userAnswer;
 // stores the index of correct answer in answer array
 app.correctAnswerIndex;
 
+// changes to true once user selects an answer
+app.answerQuestion = false;
+
 
 // get questions from API 
 app.getQuestions = function(category){
@@ -25,7 +28,6 @@ app.getQuestions = function(category){
        $(".next").on("click", function (e) {
             //remove default settings of the 'next' submit button, listen for click to go to next question
            e.preventDefault();
-           
             //update question count on quiz going up to 10, and update question tracker
            if (app.questionCount < 9) {
                app.questionCount++;
@@ -33,7 +35,9 @@ app.getQuestions = function(category){
                $(".question-tracker span").html(app.questionCount + 1);
            } else {
                app.showResult();
-           }             
+           } 
+           // re-assign the variable to false so the user is able to click on another answer
+           app.answerQuestion = false;            
        })
    });
 };
@@ -43,9 +47,9 @@ app.getQuestions = function(category){
  app.showResult = function() {
      $(".results").removeClass("hidden");
      if (app.score >= 8) {
-         $(".results").append(`<div class="clear"><p>Hey ya jerk, you're a smartypants you scored ${app.score} out of 10!</p></div>`)
+         $(".results-box").append(`<div class="clear"><p>Great job, Smartypants! You scored ${app.score} out of 10!</p></div>`)
      } else {
-         $(".results").append(`<div class="clear"><p>Hey stupid, you only scored ${app.score} out of 10, go back to school ya idiot!</p></div>`)
+         $(".results-box").append(`<div class="clear"><p>You only scored ${app.score} out of 10, better luck next time, little buddy!</p></div>`)
      }
  }
  
@@ -107,20 +111,24 @@ app.updateQuestion = function(question){
    
 //on click of answer label, check if user's answer is correct or incorrect
    $(".answer-option").on("click", function () {
-       app.userAnswer = $(this).data('index');
-       console.log(app.userAnswer, app.correctAnswerIndex);
-
-       if (app.userAnswer == app.correctAnswerIndex) {
-           console.log ("CORRECT!!!!");
-           $(this).addClass("correct");
-           app.score++;
-        //    console.log(app.score);
-           $(".answers").prop("disabled", true);
-       } else {
-           console.log ("The price is wrong, bitch!");
-           $(this).addClass("incorrect");
-           $(`.answer-option[data-index=${app.correctAnswerIndex}]`).addClass("correct");
-           $(".answers").prop("disabled", true);
+       if(app.answerQuestion == false) {
+           app.userAnswer = $(this).data('index');
+           console.log(app.userAnswer, app.correctAnswerIndex);
+           
+           if (app.userAnswer == app.correctAnswerIndex) {
+               console.log ("CORRECT!!!!");
+               $(this).addClass("correct");
+               app.score++;
+               //    console.log(app.score);
+               $(".answers").prop("disabled", true);
+            } else {
+                console.log ("INCORRECT");
+                $(this).addClass("incorrect");
+                $(`.answer-option[data-index=${app.correctAnswerIndex}]`).addClass("correct");
+                $(".answers").prop("disabled", true);
+            }
+    
+            app.answerQuestion = true;
        }
    });
  };
