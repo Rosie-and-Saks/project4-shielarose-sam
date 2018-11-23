@@ -1,0 +1,157 @@
+// GLOBAL STYLES 
+html {
+   font-size: 62.5%;
+}
+
+body {
+   background: #f3f9fc;
+   @include base-font(20);
+}
+
+.wrapper {
+   max-width: 1080px;
+   width: 80%;
+   margin: 0 auto;
+}
+
+input {
+   display: none;
+}
+
+label {
+   cursor: pointer;
+}
+
+.button {
+   position: relative;
+   top: 0;
+   left: 0;
+   padding: 10px 25px;
+   border-radius: 10px;
+   color: $white;
+   font-weight: 700;
+   letter-spacing: 0.5px;
+   background: $accent-color;
+   box-shadow: 
+   1px 1px 0px $text-color,
+   2px 2px 0px $text-color,
+   3px 3px 0px $text-color,
+   4px 4px 0px $text-color,
+   5px 5px 0px $text-color,
+   6px 6px 0px $text-color,
+   7px 7px 0px $text-color,
+   8px 8px 0px $text-color;
+   transition: all 0.15s ease;
+   &:active {
+      box-shadow: 1px 1px 0px $text-color;
+      top: 6px;
+      left: 6px;
+   }
+
+}
+
+// HEADER 
+header {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   .main-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   h1 {
+      @include base-font(115);
+      font-family: $title-font;
+      color: $heading-color;
+      text-shadow: 
+      1px 1px 0 $text-color,
+      2px 2px 0 $text-color,
+      3px 3px 0 $text-color,
+      4px 4px 0 $text-color,
+      5px 5px 0 $text-color,
+      6px 6px 0 $text-color,
+      7px 7px 0 $text-color,
+      8px 8px 0 $text-color,
+      9px 9px 0 $text-color,
+      10px 10px 0 $text-color,
+      11px 11px 0 $text-color,
+      12px 12px 0 $text-color,
+      13px 13px 0 $text-color,
+      14px 14px 0 $text-color,
+      15px 15px 0 $text-color
+   }
+   .smartypants{
+      max-width: 150px;
+      margin-left: 20px;
+      transform: rotate(15deg);
+      img {
+         animation-duration: 1.2s;
+      }
+   }
+   .header-intro {
+      font-family: $text-font;
+      text-align: center;
+      max-width: 70%;
+      line-height: 2;
+      p {
+         margin: 0px 0px 50px 0px; 
+      }
+   }
+}
+
+
+// MAIN 
+
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   text-align: center;
+}
+
+h2 {
+   @include base-font(75);
+   font-family: $title-font;
+}
+
+.category-form fieldset {
+   display:flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   border: none;
+   label {
+      @extend .button;
+      position: relative;
+      top: 0;
+      left: 0;
+      box-shadow: 3px 3px 0 $text-color;
+      width: calc((100% / 4) - 12px);
+      padding: 20px 0;
+      margin: 10px 0;
+      &:active {
+         box-shadow: none;
+         top: 3px;
+         left: 3px;
+      }
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+// RESULTS
+.hidden {
+    display:none;
+}

@@ -154,3 +154,141 @@ ul {
 
 img {
   max-width: 100%; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #f3f9fc;
+  font-size: 20px;
+  font-size: 2rem; }
+
+.wrapper {
+  max-width: 1080px;
+  width: 80%;
+  margin: 0 auto; }
+
+input {
+  display: none; }
+
+label {
+  cursor: pointer; }
+
+.button, .category-form fieldset label {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 10px 25px;
+  border-radius: 10px;
+  color: #FAFAFA;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: #4b87ce;
+  -webkit-box-shadow: 1px 1px 0px #282a2d, 2px 2px 0px #282a2d, 3px 3px 0px #282a2d, 4px 4px 0px #282a2d, 5px 5px 0px #282a2d, 6px 6px 0px #282a2d, 7px 7px 0px #282a2d, 8px 8px 0px #282a2d;
+  box-shadow: 1px 1px 0px #282a2d, 2px 2px 0px #282a2d, 3px 3px 0px #282a2d, 4px 4px 0px #282a2d, 5px 5px 0px #282a2d, 6px 6px 0px #282a2d, 7px 7px 0px #282a2d, 8px 8px 0px #282a2d;
+  -webkit-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease; }
+  .button:active, .category-form fieldset label:active {
+    -webkit-box-shadow: 1px 1px 0px #282a2d;
+    box-shadow: 1px 1px 0px #282a2d;
+    top: 6px;
+    left: 6px; }
+
+header {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  header .main-heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  header h1 {
+    font-size: 115px;
+    font-size: 11.5rem;
+    font-family: "Londrina Solid", sans-serif;
+    color: #FF8C00;
+    text-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d, 4px 4px 0 #282a2d, 5px 5px 0 #282a2d, 6px 6px 0 #282a2d, 7px 7px 0 #282a2d, 8px 8px 0 #282a2d, 9px 9px 0 #282a2d, 10px 10px 0 #282a2d, 11px 11px 0 #282a2d, 12px 12px 0 #282a2d, 13px 13px 0 #282a2d, 14px 14px 0 #282a2d, 15px 15px 0 #282a2d; }
+  header .smartypants {
+    max-width: 150px;
+    margin-left: 20px;
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg); }
+    header .smartypants img {
+      -webkit-animation-duration: 1.2s;
+      animation-duration: 1.2s; }
+  header .header-intro {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    max-width: 70%;
+    line-height: 2; }
+    header .header-intro p {
+      margin: 0px 0px 50px 0px; }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center; }
+
+h2 {
+  font-size: 75px;
+  font-size: 7.5rem;
+  font-family: "Londrina Solid", sans-serif; }
+
+.category-form fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border: none; }
+  .category-form fieldset label {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-box-shadow: 3px 3px 0 #282a2d;
+    box-shadow: 3px 3px 0 #282a2d;
+    width: calc((100% / 4) - 12px);
+    padding: 20px 0;
+    margin: 10px 0; }
+    .category-form fieldset label:active {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      top: 3px;
+      left: 3px; }
+
+.hidden {
+  display: none; }
