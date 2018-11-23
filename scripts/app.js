@@ -43,23 +43,34 @@ app.getQuestions = function(category){
  app.showResult = function() {
      $(".results").removeClass("hidden");
      if (app.score >= 8) {
-         $(".results").html(`Hey ya jerk, you're a smartypants you scored ${app.score} out of 10!`)
+         $(".results").append(`<div class="clear"><p>Hey ya jerk, you're a smartypants you scored ${app.score} out of 10!</p></div>`)
      } else {
-         $(".results").html(`Hey stupid, you only scored ${app.score} out of 10, go back to school ya idiot!`)
+         $(".results").append(`<div class="clear"><p>Hey stupid, you only scored ${app.score} out of 10, go back to school ya idiot!</p></div>`)
      }
  }
-
+ 
 // Listen for when user clicks on a category and pull the array of questions relating to that category from API
 app.listenForChange = function(){
    $(".category-name").on("click", function(){
       app.chosenCategory = $(this).val();
       app.getQuestions(app.chosenCategory);
-      $(".category-form").fadeOut();
+      $(".categories").fadeOut();
+      $(".question-container").fadeIn();
+      app.questionCount = 0;
+      app.score = 0;
+      $(".clear").empty();
       $(".answer-bottom").html(`
         <div class="question-tracker"><span>1</span>/10</div>
         <button class="next">Next</button>`);
-
    });
+};
+
+app.playAgain = function() {
+    $("#play-again").on("click", function() {
+        $(".categories").fadeIn();
+        $(".question-container").fadeOut();
+        $(".results").addClass("hidden");
+    })
 };
 
 
@@ -116,6 +127,8 @@ app.updateQuestion = function(question){
 
 app.init = function(){
    app.listenForChange();
+   app.playAgain();
+
 };
 
 $(function(){
