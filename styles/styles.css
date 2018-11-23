@@ -162,7 +162,8 @@ body {
   background: #f3f9fc;
   font-size: 20px;
   font-size: 2rem;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  color: #0f0f0f; }
 
 .wrapper {
   max-width: 1080px;
@@ -212,7 +213,7 @@ header {
     font-size: 11.5rem;
     font-family: "Londrina Solid", sans-serif;
     color: #FF8C00;
-    text-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d, 4px 4px 0 #282a2d, 5px 5px 0 #282a2d, 6px 6px 0 #282a2d, 7px 7px 0 #282a2d, 8px 8px 0 #282a2d, 9px 9px 0 #282a2d, 10px 10px 0 #282a2d, 11px 11px 0 #282a2d, 12px 12px 0 #282a2d, 13px 13px 0 #282a2d, 14px 14px 0 #282a2d, 15px 15px 0 #282a2d; }
+    text-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f, 4px 4px 0 #0f0f0f, 5px 5px 0 #0f0f0f, 6px 6px 0 #0f0f0f, 7px 7px 0 #0f0f0f, 8px 8px 0 #0f0f0f, 9px 9px 0 #0f0f0f, 10px 10px 0 #0f0f0f, 11px 11px 0 #0f0f0f, 12px 12px 0 #0f0f0f, 13px 13px 0 #0f0f0f, 14px 14px 0 #0f0f0f, 15px 15px 0 #0f0f0f; }
   header .smartypants {
     max-width: 150px;
     width: 150px;
@@ -225,11 +226,13 @@ header {
       animation-duration: 1.2s; }
   header .header-intro {
     font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-size: 1.8rem;
     text-align: center;
-    max-width: 70%;
+    max-width: 100%;
     line-height: 2; }
     header .header-intro p {
-      margin: 0px 0px 50px 0px; }
+      margin: 0; }
   header .button {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -247,27 +250,27 @@ header {
     position: relative;
     top: 0;
     left: 0;
-    background: #4b87ce;
+    background: #569ceb;
     border-radius: 10px;
     letter-spacing: 0.5px;
     border: none;
     -webkit-transition: all 0.15s ease;
     -o-transition: all 0.15s ease;
     transition: all 0.15s ease;
-    -webkit-box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
-    box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+    -webkit-box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
+    box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
     padding: 5px 25px;
-    color: #FAFAFA;
+    color: #0f0f0f;
     font-weight: 700;
     width: 30%;
-    margin: 0 auto;
-    -webkit-box-shadow: 1px 1px 0px #282a2d, 2px 2px 0px #282a2d, 3px 3px 0px #282a2d, 4px 4px 0px #282a2d, 5px 5px 0px #282a2d, 6px 6px 0px #282a2d, 7px 7px 0px #282a2d, 8px 8px 0px #282a2d;
-    box-shadow: 1px 1px 0px #282a2d, 2px 2px 0px #282a2d, 3px 3px 0px #282a2d, 4px 4px 0px #282a2d, 5px 5px 0px #282a2d, 6px 6px 0px #282a2d, 7px 7px 0px #282a2d, 8px 8px 0px #282a2d; }
+    margin: 50px auto;
+    -webkit-box-shadow: 1px 1px 0px #0f0f0f, 2px 2px 0px #0f0f0f, 3px 3px 0px #0f0f0f, 4px 4px 0px #0f0f0f, 5px 5px 0px #0f0f0f, 6px 6px 0px #0f0f0f, 7px 7px 0px #0f0f0f, 8px 8px 0px #0f0f0f;
+    box-shadow: 1px 1px 0px #0f0f0f, 2px 2px 0px #0f0f0f, 3px 3px 0px #0f0f0f, 4px 4px 0px #0f0f0f, 5px 5px 0px #0f0f0f, 6px 6px 0px #0f0f0f, 7px 7px 0px #0f0f0f, 8px 8px 0px #0f0f0f; }
     header .button:hover, header .button:focus {
-      background-color: #4579b9; }
+      background-color: #508fd6; }
     header .button:active {
-      -webkit-box-shadow: 1px 1px 0px #282a2d;
-      box-shadow: 1px 1px 0px #282a2d;
+      -webkit-box-shadow: 1px 1px 0px #0f0f0f;
+      box-shadow: 1px 1px 0px #0f0f0f;
       top: 6px;
       left: 6px; }
 
@@ -327,22 +330,22 @@ h2 {
     position: relative;
     top: 0;
     left: 0;
-    background: #4b87ce;
+    background: #569ceb;
     border-radius: 10px;
     letter-spacing: 0.5px;
     border: none;
     -webkit-transition: all 0.15s ease;
     -o-transition: all 0.15s ease;
     transition: all 0.15s ease;
-    -webkit-box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
-    box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+    -webkit-box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
+    box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 220px;
     flex: 0 1 220px;
     padding: 20px 5px;
     margin: 5px; }
     .category-form fieldset label:hover, .category-form fieldset label:focus {
-      background-color: #4579b9; }
+      background-color: #508fd6; }
     .category-form fieldset label:active {
       -webkit-box-shadow: none;
       box-shadow: none;
@@ -416,8 +419,8 @@ h2 {
     -webkit-transition: all 0.15s ease;
     -o-transition: all 0.15s ease;
     transition: all 0.15s ease;
-    -webkit-box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
-    box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+    -webkit-box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
+    box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
     margin: 7px 0;
     padding: 20px;
     width: 100%; }
@@ -458,16 +461,18 @@ h2 {
   position: relative;
   top: 0;
   left: 0;
-  background: #4b87ce;
+  background: #569ceb;
   border-radius: 10px;
   letter-spacing: 0.5px;
   border: none;
   -webkit-transition: all 0.15s ease;
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
-  -webkit-box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
-  box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+  -webkit-box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
+  box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
   padding: 10px 50px; }
+  .next:hover {
+    background-color: #508fd6; }
 
 .question-tracker {
   font-size: 30px;
@@ -481,22 +486,22 @@ h2 {
 .correct::after {
   font-family: "Font Awesome 5 Free";
   content: "\f058";
-  font-size: 40px;
-  font-size: 4rem;
+  font-size: 50px;
+  font-size: 5rem;
   color: #2caf2c;
   position: absolute;
   top: calc(50% - 23px);
-  right: -50px; }
+  right: -60px; }
 
 .incorrect::after {
   font-family: "Font Awesome 5 Free";
   content: "\f057";
-  font-size: 40px;
-  font-size: 4rem;
+  font-size: 50px;
+  font-size: 5rem;
   color: #ca0404;
   position: absolute;
   top: calc(50% - 23px);
-  right: -50px; }
+  right: -60px; }
 
 .hidden {
   display: none; }
@@ -525,8 +530,10 @@ h2 {
   align-content: center; }
 
 footer {
-  background: #282a2d;
-  padding: 20px; }
+  background: #0f0f0f;
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 10px; }
   footer p, footer a {
     text-align: center;
     color: #FAFAFA;
