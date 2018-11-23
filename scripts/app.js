@@ -27,21 +27,38 @@ app.getQuestions = function(category){
            e.preventDefault();
            
             //update question count on quiz going up to 10, and update question tracker
-           if (app.questionCount < 10) {
+           if (app.questionCount < 9) {
                app.questionCount++;
                app.updateQuestion(res.results);
                $(".question-tracker span").html(app.questionCount + 1);
-           }
+           } else {
+               app.showResult();
+           }             
        })
    });
 };
 
+ //after the last click (when quiz reaches 10), show results
+
+ app.showResult = function() {
+     $(".results").removeClass("hidden");
+     if (app.score >= 8) {
+         $(".results").html(`Hey ya jerk, you're a smartypants you scored ${app.score} out of 10!`)
+     } else {
+         $(".results").html(`Hey stupid, you only scored ${app.score} out of 10, go back to school ya idiot!`)
+     }
+ }
 
 // Listen for when user clicks on a category and pull the array of questions relating to that category from API
 app.listenForChange = function(){
    $(".category-name").on("click", function(){
       app.chosenCategory = $(this).val();
       app.getQuestions(app.chosenCategory);
+      $(".category-form").fadeOut();
+      $(".answer-bottom").html(`
+        <div class="question-tracker"><span>1</span>/10</div>
+        <button class="next">Next</button>`);
+
    });
 };
 
