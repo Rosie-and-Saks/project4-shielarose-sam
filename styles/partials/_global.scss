@@ -6,6 +6,7 @@ html {
 body {
    background: #f3f9fc;
    @include base-font(20);
+   font-family: $text-font;
 }
 
 .wrapper {
@@ -14,41 +15,18 @@ body {
    margin: 0 auto;
 }
 
-// input {
-//    display: none;
-// }
+input {
+   display: none;
+}
+
+fieldset {
+   border: none;
+}
 
 label {
    cursor: pointer;
 }
 
-.button {
-   position: relative;
-   top: 0;
-   left: 0;
-   padding: 10px 25px;
-   border-radius: 10px;
-   color: $white;
-   font-weight: 700;
-   letter-spacing: 0.5px;
-   background: $accent-color;
-   box-shadow: 
-   1px 1px 0px $text-color,
-   2px 2px 0px $text-color,
-   3px 3px 0px $text-color,
-   4px 4px 0px $text-color,
-   5px 5px 0px $text-color,
-   6px 6px 0px $text-color,
-   7px 7px 0px $text-color,
-   8px 8px 0px $text-color;
-   transition: all 0.15s ease;
-   &:active {
-      box-shadow: 1px 1px 0px $text-color;
-      top: 6px;
-      left: 6px;
-   }
-
-}
 
 
 

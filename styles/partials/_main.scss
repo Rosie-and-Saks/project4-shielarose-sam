@@ -1,10 +1,7 @@
 // MAIN 
 main {
+   @include flex(column);
    position: relative;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
    height: 100vh;
    text-align: center;
 }
@@ -16,22 +13,17 @@ h2 {
 
 // CATEGORIES
 .category-form fieldset {
-   display:flex;
-   flex-wrap: wrap;
-   justify-content: center;   
-   border: none;
+   @include flex(row);
+   flex-wrap: wrap;  
    label {
-      @extend .button;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include button($accent-color);
       flex: 0 1 220px;
-      top: 0;
-      left: 0;
-      box-shadow: 3px 3px 0 $text-color;
-      padding: 20px 10px;
+      padding: 20px 5px;
       margin: 5px;
+      &:hover,
+      &:focus {
+         background-color: $hover-accent;
+      }
       &:active {
          box-shadow: none;
          top: 3px;
@@ -42,10 +34,46 @@ h2 {
 
 // QUESTIONS
 .question-container {
+   @include flex(column);
    height: 100vh;
    width: 100%;
+   border: 1px solid tomato;
+}
+
+.question-form {
+   border: 1px solid blue;
+   width: 100%;
+   h3 {
+      @include base-font(50);
+      font-family: $title-font;
+      margin: 25px 0;
+      letter-spacing: 1.5px;
+   }
+}
+
+.answer-box {
+   .answers {
+      @include flex(column);
+   }
+   .answer-option {
+      @include button($heading-color);
+      margin: 7px 0;
+      padding: 20px;
+      width: 100%;
+      &:hover,
+      &:focus {
+         background-color: $hover-orange;
+      }
+      &:active {
+         box-shadow: none;
+         top: 2px;
+         left: 2px;
+      }
+   }
+}
+
+.answer-bottom {
    display: flex;
-   flex-direction: column;
-   justify-content: center;
+   justify-content: space-between;
    align-items: center;
 }

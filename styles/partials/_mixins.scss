@@ -1,5 +1,32 @@
 // FONT MIXINS
-@mixin base-font($sizeValue){
-   font-size: $sizeValue * 1px;
-   font-size: ($sizeValue/10) * 1rem;
+@mixin base-font($size-value){
+   font-size: $size-value * 1px;
+   font-size: ($size-value/10) * 1rem;
+}
+
+@mixin box-shadow($pixels){
+   box-shadow: ($pixels * 1px) ($pixels * 1px) 0 $text-color;
+}
+
+@mixin flex($column-or-row){
+   display: flex;
+   flex-direction: $column-or-row;
+   justify-content: center;
+   align-items: center;
+}
+
+@mixin button($background-color){
+   @include flex(row);
+   position: relative;
+   top: 0;
+   left: 0;
+   background: $background-color;
+   border-radius: 10px;
+   letter-spacing: 0.5px;
+   border: none;
+   transition: all 0.15s ease;
+   box-shadow: 
+      1px 1px 0 $text-color,
+      2px 2px 0 $text-color,
+      3px 3px 0 $text-color;
 }

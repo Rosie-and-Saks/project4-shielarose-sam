@@ -1,14 +1,9 @@
 // HEADER 
 header {
+   @include flex(column);
    height: 100vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
    .main-heading {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex(row);
    }
    h1 {
       @include base-font(115);
@@ -33,6 +28,7 @@ header {
    }
    .smartypants{
       max-width: 150px;
+      width: 150px;
       margin-left: 20px;
       transform: rotate(15deg);
       img {
@@ -48,4 +44,31 @@ header {
          margin: 0px 0px 50px 0px; 
       }
    }
+   .button {
+      @include button($accent-color);
+      padding: 5px 25px;
+      color: $white;
+      font-weight: 700;
+      width: 30%;
+      margin: 0 auto;
+      box-shadow: 
+      1px 1px 0px $text-color,
+      2px 2px 0px $text-color,
+      3px 3px 0px $text-color,
+      4px 4px 0px $text-color,
+      5px 5px 0px $text-color,
+      6px 6px 0px $text-color,
+      7px 7px 0px $text-color,
+      8px 8px 0px $text-color;
+      &:hover,
+      &:focus {
+         background-color: $hover-accent;
+      }
+      &:active {
+         box-shadow: 1px 1px 0px $text-color;
+         top: 6px;
+         left: 6px;
+      }
+
+}
 }
