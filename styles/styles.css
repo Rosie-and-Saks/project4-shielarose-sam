@@ -271,24 +271,53 @@ h2 {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: none; }
   .category-form fieldset label {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 220px;
+    flex: 0 1 220px;
     top: 0;
     left: 0;
     -webkit-box-shadow: 3px 3px 0 #282a2d;
     box-shadow: 3px 3px 0 #282a2d;
-    width: calc((100% / 4) - 12px);
-    padding: 20px 0;
-    margin: 10px 0; }
+    padding: 20px 10px;
+    margin: 5px; }
     .category-form fieldset label:active {
       -webkit-box-shadow: none;
       box-shadow: none;
       top: 3px;
       left: 3px; }
 
+.question-container {
+  height: 70vh;
+  width: 100%; }
+
 .hidden {
   display: none; }
+
+.results {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+@media (max-width: 611px) {
+  main {
+    height: auto; }
+  .category-form fieldset label {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    width: 100%; } }

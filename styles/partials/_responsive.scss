@@ -1,0 +1,12 @@
+// CATEGORIES SECTION 
+@media (max-width: 611px) {
+   main {
+      height: auto;
+   }
+   .category-form fieldset {
+      label {
+         flex: none;
+         width: 100%;
+      }
+   }
+}
