@@ -178,30 +178,7 @@ fieldset {
 label {
   cursor: pointer; }
 
-.button, .category-form fieldset label, .next {
-  position: relative;
-  top: 0;
-  left: 0;
-  padding: 10px 25px;
-  border-radius: 10px;
-  color: #FAFAFA;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  background: #4b87ce;
-  border: none;
-  -webkit-box-shadow: 1px 1px 0px #282a2d, 2px 2px 0px #282a2d, 3px 3px 0px #282a2d, 4px 4px 0px #282a2d, 5px 5px 0px #282a2d, 6px 6px 0px #282a2d, 7px 7px 0px #282a2d, 8px 8px 0px #282a2d;
-  box-shadow: 1px 1px 0px #282a2d, 2px 2px 0px #282a2d, 3px 3px 0px #282a2d, 4px 4px 0px #282a2d, 5px 5px 0px #282a2d, 6px 6px 0px #282a2d, 7px 7px 0px #282a2d, 8px 8px 0px #282a2d;
-  -webkit-transition: all 0.15s ease;
-  -o-transition: all 0.15s ease;
-  transition: all 0.15s ease; }
-  .button:active, .category-form fieldset label:active, .next:active {
-    -webkit-box-shadow: 1px 1px 0px #282a2d;
-    box-shadow: 1px 1px 0px #282a2d;
-    top: 6px;
-    left: 6px; }
-
 header {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,11 +191,16 @@ header {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  height: 100vh; }
   header .main-heading {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -233,6 +215,7 @@ header {
     text-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d, 4px 4px 0 #282a2d, 5px 5px 0 #282a2d, 6px 6px 0 #282a2d, 7px 7px 0 #282a2d, 8px 8px 0 #282a2d, 9px 9px 0 #282a2d, 10px 10px 0 #282a2d, 11px 11px 0 #282a2d, 12px 12px 0 #282a2d, 13px 13px 0 #282a2d, 14px 14px 0 #282a2d, 15px 15px 0 #282a2d; }
   header .smartypants {
     max-width: 150px;
+    width: 150px;
     margin-left: 20px;
     -webkit-transform: rotate(15deg);
     -ms-transform: rotate(15deg);
@@ -247,9 +230,48 @@ header {
     line-height: 2; }
     header .header-intro p {
       margin: 0px 0px 50px 0px; }
+  header .button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #4b87ce;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    border: none;
+    -webkit-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    -webkit-box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+    box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+    padding: 5px 25px;
+    color: #FAFAFA;
+    font-weight: 700;
+    width: 30%;
+    margin: 0 auto;
+    -webkit-box-shadow: 1px 1px 0px #282a2d, 2px 2px 0px #282a2d, 3px 3px 0px #282a2d, 4px 4px 0px #282a2d, 5px 5px 0px #282a2d, 6px 6px 0px #282a2d, 7px 7px 0px #282a2d, 8px 8px 0px #282a2d;
+    box-shadow: 1px 1px 0px #282a2d, 2px 2px 0px #282a2d, 3px 3px 0px #282a2d, 4px 4px 0px #282a2d, 5px 5px 0px #282a2d, 6px 6px 0px #282a2d, 7px 7px 0px #282a2d, 8px 8px 0px #282a2d; }
+    header .button:hover, header .button:focus {
+      background-color: #4579b9; }
+    header .button:active {
+      -webkit-box-shadow: 1px 1px 0px #282a2d;
+      box-shadow: 1px 1px 0px #282a2d;
+      top: 6px;
+      left: 6px; }
 
 main {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,6 +285,7 @@ main {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
   height: 100vh;
   text-align: center; }
 
@@ -275,31 +298,51 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   .category-form fieldset label {
-    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #4b87ce;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    border: none;
+    -webkit-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    -webkit-box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+    box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 220px;
     flex: 0 1 220px;
-    top: 0;
-    left: 0;
-    -webkit-box-shadow: 3px 3px 0 #282a2d;
-    box-shadow: 3px 3px 0 #282a2d;
     padding: 20px 5px;
     margin: 5px; }
+    .category-form fieldset label:hover, .category-form fieldset label:focus {
+      background-color: #4579b9; }
     .category-form fieldset label:active {
       -webkit-box-shadow: none;
       box-shadow: none;
@@ -307,8 +350,6 @@ h2 {
       left: 3px; }
 
 .question-container {
-  height: 100vh;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,19 +363,19 @@ h2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  height: 100vh;
+  width: 100%;
   border: 1px solid tomato; }
 
 .question-form {
   border: 1px solid blue;
   width: 100%; }
   .question-form h3 {
-    font-family: "Londrina Solid", sans-serif;
     font-size: 50px;
     font-size: 5rem;
+    font-family: "Londrina Solid", sans-serif;
     margin: 25px 0;
-    letter-spacing: 1.5px;
-    position: relative;
-    z-index: 1; }
+    letter-spacing: 1.5px; }
 
 .answer-box .answers {
   display: -webkit-box;
@@ -343,13 +384,50 @@ h2 {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .answer-box .answer-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
   background: #FF8C00;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+  border: none;
+  -webkit-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  -webkit-box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+  box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
   margin: 7px 0;
   padding: 20px;
-  border-radius: 5px; }
+  width: 100%; }
+  .answer-box .answer-option:hover, .answer-box .answer-option:focus {
+    background-color: #e78103; }
+  .answer-box .answer-option:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    top: 2px;
+    left: 2px; }
 
 .answer-bottom {
   display: -webkit-box;
@@ -361,10 +439,6 @@ h2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
-
-.next {
-  -webkit-box-shadow: none;
-  box-shadow: none; }
 
 .hidden {
   display: none; }
