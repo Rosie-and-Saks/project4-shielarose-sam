@@ -364,11 +364,9 @@ h2 {
   -ms-flex-align: center;
   align-items: center;
   height: 100vh;
-  width: 100%;
-  border: 1px solid tomato; }
+  width: 100%; }
 
 .question-form {
-  border: 1px solid blue;
   width: 100%; }
   .question-form h3 {
     font-size: 50px;
@@ -377,22 +375,73 @@ h2 {
     margin: 25px 0;
     letter-spacing: 1.5px; }
 
-.answer-box .answers {
+.answer-box {
+  padding: 15px; }
+  .answer-box .answers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0; }
+  .answer-box .answer-option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #FF8C00;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    border: none;
+    -webkit-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    -webkit-box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+    box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
+    margin: 7px 0;
+    padding: 20px;
+    width: 100%; }
+    .answer-box .answer-option:hover, .answer-box .answer-option:focus {
+      background-color: #e78103; }
+    .answer-box .answer-option:active {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      top: 2px;
+      left: 2px; }
+
+.answer-bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 10px; }
 
-.answer-box .answer-option {
+.next {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -409,7 +458,7 @@ h2 {
   position: relative;
   top: 0;
   left: 0;
-  background: #FF8C00;
+  background: #4b87ce;
   border-radius: 10px;
   letter-spacing: 0.5px;
   border: none;
@@ -418,27 +467,36 @@ h2 {
   transition: all 0.15s ease;
   -webkit-box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
   box-shadow: 1px 1px 0 #282a2d, 2px 2px 0 #282a2d, 3px 3px 0 #282a2d;
-  margin: 7px 0;
-  padding: 20px;
-  width: 100%; }
-  .answer-box .answer-option:hover, .answer-box .answer-option:focus {
-    background-color: #e78103; }
-  .answer-box .answer-option:active {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    top: 2px;
-    left: 2px; }
+  padding: 10px 50px; }
 
-.answer-bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
+.question-tracker {
+  font-size: 30px;
+  font-size: 3rem;
+  font-family: "Londrina Solid", sans-serif; }
+
+.correct,
+.incorrect {
+  position: relative; }
+
+.correct::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f058";
+  font-size: 40px;
+  font-size: 4rem;
+  color: #2caf2c;
+  position: absolute;
+  top: calc(50% - 23px);
+  right: -50px; }
+
+.incorrect::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f057";
+  font-size: 40px;
+  font-size: 4rem;
+  color: #ca0404;
+  position: absolute;
+  top: calc(50% - 23px);
+  right: -50px; }
 
 .hidden {
   display: none; }

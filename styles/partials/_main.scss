@@ -37,11 +37,9 @@ h2 {
    @include flex(column);
    height: 100vh;
    width: 100%;
-   border: 1px solid tomato;
 }
 
 .question-form {
-   border: 1px solid blue;
    width: 100%;
    h3 {
       @include base-font(50);
@@ -52,8 +50,10 @@ h2 {
 }
 
 .answer-box {
+   padding: 15px;
    .answers {
       @include flex(column);
+      padding: 0;
    }
    .answer-option {
       @include button($heading-color);
@@ -76,4 +76,44 @@ h2 {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   margin-top: 10px;
 }
+
+.next {
+   @include button($accent-color);
+   padding: 10px 50px;
+}
+
+.question-tracker {
+   @include base-font(30);
+   font-family: $title-font;
+}
+
+// RIGHT AND WRONG ANSWER STYLES
+.correct,
+.incorrect {
+   position: relative;
+}
+
+.correct::after {
+   font-family: "Font Awesome 5 Free";
+   content: "\f058";
+   @include base-font(40);
+   color: $correct-color;
+   position: absolute;
+   top: calc(50% - 23px);
+   right: -50px;
+}
+
+.incorrect::after {
+   font-family: "Font Awesome 5 Free";
+   content: "\f057";
+   @include base-font(40);
+   color: $wrong-color;
+   position: absolute;
+   top: calc(50% - 23px);
+   right: -50px;
+}
+
+
+
