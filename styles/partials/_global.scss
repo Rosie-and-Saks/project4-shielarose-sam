@@ -5,12 +5,21 @@ html {
 
 body {
    background: #f3f9fc;
+   @include base-font(20);
 }
 
 .wrapper {
    max-width: 1080px;
    width: 80%;
    margin: 0 auto;
+}
+
+input {
+   display: none;
+}
+
+label {
+   cursor: pointer;
 }
 
 .button {
@@ -34,8 +43,7 @@ body {
    8px 8px 0px $text-color;
    transition: all 0.15s ease;
    &:active {
-      box-shadow: 
-      1px 1px 0px $text-color;
+      box-shadow: 1px 1px 0px $text-color;
       top: 6px;
       left: 6px;
    }
@@ -84,7 +92,6 @@ header {
       }
    }
    .header-intro {
-      @include base-font(20);
       font-family: $text-font;
       text-align: center;
       max-width: 70%;
@@ -95,6 +102,44 @@ header {
    }
 }
 
+
+// MAIN 
+
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   text-align: center;
+}
+
+h2 {
+   @include base-font(75);
+   font-family: $title-font;
+}
+
+.category-form fieldset {
+   display:flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   border: none;
+   label {
+      @extend .button;
+      position: relative;
+      top: 0;
+      left: 0;
+      box-shadow: 3px 3px 0 $text-color;
+      width: calc((100% / 4) - 12px);
+      padding: 20px 0;
+      margin: 10px 0;
+      &:active {
+         box-shadow: none;
+         top: 3px;
+         left: 3px;
+      }
+   }
+}
 
 
 
