@@ -293,7 +293,8 @@ main {
 h2 {
   font-size: 75px;
   font-size: 7.5rem;
-  font-family: "Londrina Solid", sans-serif; }
+  font-family: "Londrina Solid", sans-serif;
+  margin-top: 0; }
 
 .category-form fieldset {
   display: -webkit-box;
@@ -369,8 +370,8 @@ h2 {
 
 .question-form {
   width: 100%;
-  position: relative;
-  border: 1px solid red; }
+  height: 75vh;
+  position: relative; }
   .question-form h3 {
     font-size: 50px;
     font-size: 5rem;
@@ -471,8 +472,13 @@ h2 {
   -webkit-box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
   box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
   padding: 10px 50px; }
-  .next:hover {
+  .next:hover, .next:focus {
     background-color: #508fd6; }
+  .next:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    top: 2px;
+    left: 2px; }
 
 .question-tracker {
   font-size: 30px;
@@ -503,16 +509,56 @@ h2 {
   top: calc(50% - 23px);
   right: -60px; }
 
+.see-results {
+  font-family: "Open Sans", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: #569ceb;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+  border: none;
+  -webkit-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  -webkit-box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
+  box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
+  font-size: 20px;
+  font-size: 2rem;
+  color: #0f0f0f;
+  padding: 10px 50px; }
+  .see-results:hover, .see-results:focus {
+    background-color: #508fd6; }
+  .see-results:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    top: 2px;
+    left: 2px; }
+
 .hidden {
   display: none; }
 
 .results {
   position: absolute;
-  height: 65vh;
+  height: 80vh;
   width: 100%;
   z-index: 10;
   margin: 0 auto;
-  background: #FF8C00; }
+  background: #FF8C00;
+  border-radius: 10px; }
 
 .results-box {
   display: -webkit-box;
@@ -525,14 +571,60 @@ h2 {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center; }
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 50px;
+  font-size: 5rem;
+  margin: 0 auto;
+  height: 100%;
+  width: 85%;
+  font-family: "Londrina Solid", sans-serif; }
+  .results-box .play-again {
+    font-family: "Open Sans", sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #569ceb;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    border: none;
+    -webkit-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    -webkit-box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
+    box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
+    font-size: 20px;
+    font-size: 2rem;
+    color: #0f0f0f;
+    padding: 10px 50px; }
+    .results-box .play-again:hover, .results-box .play-again:focus {
+      background-color: #508fd6; }
+    .results-box .play-again:active {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      top: 2px;
+      left: 2px; }
 
 footer {
   background: #0f0f0f;
   font-size: 16px;
   font-size: 1.6rem;
-  padding: 10px; }
+  padding: 30px;
+  height: 100%; }
   footer p, footer a {
     text-align: center;
     color: #FAFAFA;
