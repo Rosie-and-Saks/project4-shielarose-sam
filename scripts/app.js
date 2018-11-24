@@ -126,7 +126,7 @@ app.updateQuestion = function(question){
        $(".answers").append(`<label for="${app.answers[i]}"  data-index="${i}" class="answer-option">${app.answers[i]}</label>`);
       
 //create input elements
-      $(".answers").append(`<input type="radio" id="${app.answers[i]}" name="answer">`);
+      $(".answers").append(`<input type="radio" id="${app.answers[i]}" class="visuallyhidden" name="answer">`);
    };
    
 //listen for click of answer option label, check if user's answer is correct or incorrect
