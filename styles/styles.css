@@ -139,11 +139,12 @@ ul {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.visuallyhidden:not(:focus):not(:active) {
+.visuallyhidden {
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
+  opacity: 0;
   border: 0;
   padding: 0;
   white-space: nowrap;
@@ -169,9 +170,6 @@ body {
   max-width: 1080px;
   width: 80%;
   margin: 0 auto; }
-
-input {
-  display: none; }
 
 fieldset {
   border: none; }
