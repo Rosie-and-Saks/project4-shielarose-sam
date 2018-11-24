@@ -5,9 +5,10 @@
 
 .results {
     position: absolute;
-    top: 0;
-    left: 0;
+    height: 65vh;
+
     width: 100%;
+
     z-index: 10;
     margin: 0 auto;
     background: $heading-color;

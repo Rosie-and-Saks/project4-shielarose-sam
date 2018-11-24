@@ -41,6 +41,8 @@ h2 {
 
 .question-form {
    width: 100%;
+   position: relative;
+   border: 1px solid red;
    h3 {
       @include base-font(50);
       font-family: $title-font;
