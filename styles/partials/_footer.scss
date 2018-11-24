@@ -1,8 +1,9 @@
 footer {
     background: $text-color;
     @include base-font(16);
-    padding: 30px;
+    padding: 20px;
     height: 100%;
+    margin-top: 75px;
 
     p, a {
         text-align: center;
