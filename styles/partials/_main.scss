@@ -13,9 +13,10 @@ h2 {
 }
 
 // CATEGORIES
-.category-form fieldset {
+
+.category-form { 
    @include flex(row);
-   flex-wrap: wrap;  
+   flex-wrap: wrap; 
    label {
       @include button($accent-color);
       flex: 0 1 220px;
@@ -36,7 +37,6 @@ h2 {
 // QUESTIONS
 .question-container {
    @include flex(column);
-   height: 100vh;
    width: 100%;
 }
 

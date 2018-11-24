@@ -296,7 +296,7 @@ h2 {
   font-family: "Londrina Solid", sans-serif;
   margin-top: 0; }
 
-.category-form fieldset {
+.category-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,7 +312,7 @@ h2 {
   align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
-  .category-form fieldset label {
+  .category-form label {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -343,9 +343,9 @@ h2 {
     flex: 0 1 220px;
     padding: 20px 5px;
     margin: 5px; }
-    .category-form fieldset label:hover, .category-form fieldset label:focus {
+    .category-form label:hover, .category-form label:focus {
       background-color: #508fd6; }
-    .category-form fieldset label:active {
+    .category-form label:active {
       -webkit-box-shadow: none;
       box-shadow: none;
       top: 3px;
@@ -365,7 +365,6 @@ h2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 100vh;
   width: 100%; }
 
 .question-form {
@@ -623,8 +622,9 @@ footer {
   background: #0f0f0f;
   font-size: 16px;
   font-size: 1.6rem;
-  padding: 30px;
-  height: 100%; }
+  padding: 20px;
+  height: 100%;
+  margin-top: 75px; }
   footer p, footer a {
     text-align: center;
     color: #FAFAFA;
