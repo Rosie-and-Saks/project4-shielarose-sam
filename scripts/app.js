@@ -64,7 +64,9 @@ app.getQuestions = function(category){
  //function to show results when user clicks on the 'show results' button:
  app.showResult = function() {
      $(".results").removeClass("hidden");
-     if (app.score >= 8) {
+     if (app.score === 10) {
+         $(".results-box").append(`<div class="clear"><p>OMG, you are the ultimate Smartypants! You scored ${app.score} out of 10. Great job!!!</p></div>`)
+     } else if (app.score > 6 && app.score < 10) {
          $(".results-box").append(`<div class="clear"><p>Great job, Smartypants! You scored ${app.score} out of 10!</p></div>`)
      } else {
          $(".results-box").append(`<div class="clear"><p>You scored ${app.score} out of 10. Better luck next time, little buddy!</p></div>`)
@@ -78,6 +80,7 @@ app.listenForChange = function(){
       app.getQuestions(app.chosenCategory);
       $(".categories").fadeOut();
       $(".question-container").fadeIn();
+      $(".question-form").removeClass("hidden");
       app.questionCount = 0;
       app.score = 0;
       $(".clear").empty();
@@ -93,6 +96,7 @@ app.playAgain = function() {
     $("#play-again").on("click", function() {
         $(".categories").fadeIn();
         $(".question-container").fadeOut();
+        $(".question-form").addClass("hidden");
         $(".results").addClass("hidden");
     })
 };
