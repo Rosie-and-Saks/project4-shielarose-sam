@@ -5,7 +5,7 @@
 
 .results {   
     position: absolute;
-    height: 80vh;
+    height: 85vh;
     width: 100%;
     z-index: 10;
     margin: 0 auto;
@@ -38,5 +38,15 @@
             left: 2px;
         }     
     }
-
 }
+
+.results-image {
+    max-width: 200px;
+    width: 100%;
+    &-champ {
+        max-width: 300px;
+        width: 100%;
+    }
+}
+
+

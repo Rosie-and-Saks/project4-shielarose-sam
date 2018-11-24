@@ -2,7 +2,7 @@
 main {
    @include flex(column);
    position: relative;
-   height: 100vh;
+   // height: 100vh;
    text-align: center;
 }
 
@@ -13,6 +13,10 @@ h2 {
 }
 
 // CATEGORIES
+
+.categories {
+   padding: 100px 0;
+}
 
 .category-form { 
    @include flex(row);
@@ -42,7 +46,7 @@ h2 {
 
 .question-form {
    width: 100%;
-   height: 75vh;
+   // height: 75vh;
    position: relative;
    h3 {
       @include base-font(50);
