@@ -9,6 +9,7 @@ main {
 h2 {
    @include base-font(75);
    font-family: $title-font;
+   margin-top: 0;
 }
 
 // CATEGORIES
@@ -41,8 +42,8 @@ h2 {
 
 .question-form {
    width: 100%;
+   height: 75vh;
    position: relative;
-   border: 1px solid red;
    h3 {
       @include base-font(50);
       font-family: $title-font;
@@ -84,8 +85,14 @@ h2 {
 .next {
    @include button($accent-color);
    padding: 10px 50px;
-   &:hover {
+   &:hover, 
+   &:focus {
       background-color: $hover-accent;
+   }
+   &:active {
+       box-shadow: none;
+       top: 2px;
+       left: 2px;
    }
 }
 
@@ -118,6 +125,23 @@ h2 {
    position: absolute;
    top: calc(50% - 23px);
    right: -60px;
+}
+
+.see-results {
+    font-family: $text-font;
+    @include button($accent-color);
+    @include base-font(20);
+    color: $text-color;
+    padding: 10px 50px;       
+    &:hover, 
+    &:focus {
+        background-color: $hover-accent;
+        }
+    &:active {
+        box-shadow: none;
+        top: 2px;
+        left: 2px;
+        }     
 }
 
 

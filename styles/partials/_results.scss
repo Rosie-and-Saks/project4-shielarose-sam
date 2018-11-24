@@ -3,20 +3,40 @@
     display:none;
 }
 
-.results {
+.results {   
     position: absolute;
-    height: 65vh;
-
+    height: 80vh;
     width: 100%;
-
     z-index: 10;
     margin: 0 auto;
     background: $heading-color;
+    border-radius: 10px;
 }
 
 .results-box {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-content: center;
+    @include flex(column-reverse);
+    @include base-font(50);
+    margin: 0 auto;
+    height: 100%;
+    width: 85%;
+    font-family: $title-font;
+
+    .play-again {
+        font-family: $text-font;
+        @include button($accent-color);
+        @include base-font(20);
+        color: $text-color;
+        padding: 10px 50px;
+        
+        &:hover, 
+        &:focus {
+            background-color: $hover-accent;
+        }
+        &:active {
+            box-shadow: none;
+            top: 2px;
+            left: 2px;
+        }     
+    }
+
 }
