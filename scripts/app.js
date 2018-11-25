@@ -66,15 +66,15 @@ app.getQuestions = function(category){
      $(".results").removeClass("hidden");
      if (app.score === 10) {        
          $(".results-box").append(`<div class="clear"><p>OMG, you are the ultimate Smartypants! You scored ${app.score} out of 10. Great job!!!</p></div>`);
-         $(".results-box").append(`<img src="assets/smartypants-champ.png" alt=""></img>`);
+         $(".results-box").append(`<img src="assets/smartypants-champ.png" alt="" class="results-image-champ"></img>`);
 
      } else if (app.score > 6 && app.score < 10) {
          $(".results-box").append(`<div class="clear"><p>Great job, Smartypants! You scored ${app.score} out of 10!</p></div>`);
-         $(".results-box").append(`<img src="assets/SmartyPants.png" alt=""></img>`);
+         $(".results-box").append(`<img src="assets/SmartyPants.png" alt="" class="results-image"></img>`);
 
      } else {        
          $(".results-box").append(`<div class="clear"><p>You scored ${app.score} out of 10. Better luck next time, little buddy!</p></div>`);
-         $(".results-box").append(`<img src="assets/sad-smartypants.png" alt=""></img>`);
+         $(".results-box").append(`<img src="assets/sad-smartypants.png" alt="" class="results-image"></img>`);
      }
  }
  
@@ -99,10 +99,7 @@ app.listenForChange = function(){
 //function to reset the quiz
 app.playAgain = function() {
     $("#play-again").on("click", function() {
-        $(".categories").fadeIn();
-        $(".question-container").fadeOut();
-        $(".question-form").addClass("hidden");
-        $(".results").addClass("hidden");
+        location.reload(true);
     })
 };
 
