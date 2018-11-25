@@ -640,6 +640,15 @@ footer {
     text-decoration: none;
     margin: 5px; }
 
+@media (min-width: 1350px) {
+  header h1 {
+    font-size: 150px;
+    font-size: 15rem; }
+  header .smartypants {
+    width: 180px; }
+  footer {
+    margin-top: 150px; } }
+
 @media (max-width: 865px) {
   header h1 {
     font-size: 90px;
