@@ -1,12 +1,157 @@
-// CATEGORIES SECTION 
-@media (max-width: 611px) {
-   main {
-      height: auto;
-   }
-   .category-form fieldset {
-      label {
-         flex: none;
-         width: 100%;
+@media (max-width: 865px) {
+   // HEADER STYLES - make heading text smaller
+   header {
+      h1 {
+         @include base-font(90);
+      }
+      .smartypants {
+         width: 120px;
+      }
+      .header-intro {
+         @include base-font(17);
+         p {
+            width: 65%;
+            margin: 0 auto;
+         }
+         .hide-responsive {
+            display: none;
+         }
       }
    }
 }
+
+@media (max-width: 678px) {
+   body {
+      @include base-font(16);
+   }
+   
+   header {
+      h1 {
+         @include base-font(75);
+      }
+      .smartypants {
+         width: 100px;
+      }
+      .header-intro {
+         @include base-font(16);
+         p {
+            width: 80%;
+         }
+      }
+   }
+
+   // categories header
+   h2 {
+      @include base-font(50);
+   }
+   .question-form h3 {
+      @include base-font(40);
+   }
+
+   .see-results {
+      @include base-font(16);
+      padding: 10px 30px;          
+   }
+
+   // results section
+   .results-box {
+      @include base-font(40);
+      .play-again {
+         @include base-font(16);
+      }
+   }
+
+   // footer text size
+   footer {
+      @include base-font(12);
+   }
+}
+
+@media (max-width: 574px) {
+   .wrapper {
+      width: 90%;
+   }
+
+   header {
+      h1 {
+         @include base-font(65);
+      }
+      .smartypants {
+         width: 90px;
+      }
+   }
+   .category-form {
+      display: block;
+      label {
+         width: 90%;
+         margin: 10px auto;
+      }
+   }
+
+   // change width of answer box
+   .answer-box {
+      width: 85%;
+      margin: 0 auto;
+   }
+   // change icon sizes
+   .correct::after,
+   .incorrect::after {
+      @include base-font(35);
+      top: calc(50% - 17px);
+      right: -50px;
+   }
+}
+
+@media(max-width: 495px) {
+   // move photo on top of header text
+   header {
+      .main-heading {
+         @include flex(column-reverse);
+      }
+      .smartypants {
+         display: none;
+      }
+      .button {
+         width: 50%;
+      }
+   }
+}
+
+@media(max-width: 400px) {
+   header {
+      h1 {
+         @include base-font(50);
+      }
+      .header-intro {
+         p {
+            width: 100%;
+         }
+      }
+   }
+
+   // main section
+   h2 {
+      @include base-font(40);
+   }
+   .question-form h3 {
+      @include base-font(35);
+   }
+
+   .see-results {
+      padding: 10px 20px;          
+   }
+
+   // results section
+   .results {
+      height: 100vh;
+      width: 100vw;
+   }
+   
+   .results-box {
+      @include base-font(30);
+   }
+
+}
+
+
+

@@ -20,14 +20,12 @@
     height: 100%;
     width: 85%;
     font-family: $title-font;
-
     .play-again {
         font-family: $text-font;
         @include button($accent-color);
         @include base-font(20);
         color: $text-color;
-        padding: 10px 50px;
-        
+        padding: 10px 50px;   
         &:hover, 
         &:focus {
             background-color: $hover-accent;
