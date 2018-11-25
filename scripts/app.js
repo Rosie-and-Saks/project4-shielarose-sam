@@ -63,6 +63,7 @@ app.getQuestions = function(category){
  //function to show results when user clicks on the 'show results' button:
  app.showResult = function() {
      $(".results").removeClass("hidden");
+     console.log("I should show up");
      if (app.score === 10) {        
          $(".results-box").append(`<div class="clear"><p>OMG, you are the ultimate Smartypants! You scored ${app.score} out of 10. Great job!!!</p></div>`);
          $(".results-box").append(`<img src="assets/smartypants-champ.png" alt="" class="results-image-champ"></img>`);
