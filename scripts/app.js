@@ -48,10 +48,9 @@ app.getQuestions = function(category){
            if (app.questionCount === 9) {
                 $(".next").addClass("hidden");
                 $(".see-results").removeClass("hidden");
-           }
-                
+           }  
 // re-assign the variable to false so the user is NOT able to click on another answer
-           app.answerQuestion = false;            
+           app.answerQuestion = false;
        })
 
 //listen for when user clicks on 'show results' button:
@@ -139,20 +138,16 @@ app.updateQuestion = function(question){
    $(".answer-option").on("click", function () {
        if(app.answerQuestion == false) {
            app.userAnswer = $(this).data('index');
-        //    console.log(app.userAnswer, app.correctAnswerIndex);
-           
            if (app.userAnswer == app.correctAnswerIndex) {
-                //console.log ("CORRECT!!!!");
                $(this).addClass("correct");
                app.score++;
                $(".answers").prop("disabled", true);
             } else {
-                // console.log ("INCORRECT");
                 $(this).addClass("incorrect");
                 $(`.answer-option[data-index=${app.correctAnswerIndex}]`).addClass("correct");
                 $(".answers").prop("disabled", true);
             }
-    
+
             app.answerQuestion = true;
        }
    });
@@ -166,7 +161,7 @@ app.init = function(){
 };
 
 $(function(){
-   app.init();
+    app.init();
 
 //smooth scroll on 'play now' button:
     $("a").on("click", function (e) {

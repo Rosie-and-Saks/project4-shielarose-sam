@@ -4,10 +4,12 @@
    font-size: ($size-value/10) * 1rem;
 }
 
+// BOX SHADOW
 @mixin box-shadow($pixels){
    box-shadow: ($pixels * 1px) ($pixels * 1px) 0 $text-color;
 }
 
+// FLEX 
 @mixin flex($column-or-row){
    display: flex;
    flex-direction: $column-or-row;
@@ -15,6 +17,7 @@
    align-items: center;
 }
 
+// BUTTON
 @mixin button($background-color){
    @include flex(row);
    position: relative;
