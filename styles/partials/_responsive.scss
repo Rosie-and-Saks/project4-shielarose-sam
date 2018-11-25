@@ -1,14 +1,15 @@
 @media (min-width: 1350px) {
-    header {
+   // HEADER STYLES
+   header {
       h1 {
          @include base-font(150);
       }
       .smartypants {
          width: 180px;
-      }
-      
+      }  
    }
 
+   // FOOTER
    footer {
        margin-top: 150px;
    }
@@ -38,10 +39,12 @@
 }
 
 @media (max-width: 678px) {
+   // GLOBAL STYLES
    body {
       @include base-font(16);
    }
    
+   // HEADER STYLES
    header {
       h1 {
          @include base-font(75);
@@ -57,7 +60,7 @@
       }
    }
 
-   // categories header
+   // MAIN/CATEGORIES SECTION STYLES
    h2 {
       @include base-font(50);
    }
@@ -70,7 +73,7 @@
       padding: 10px 30px;          
    }
 
-   // results section
+   // RESULTS SECTION STYLES
    .results-box {
       @include base-font(40);
       .play-again {
@@ -78,17 +81,19 @@
       }
    }
 
-   // footer text size
+   // FOOTER STYLES
    footer {
       @include base-font(12);
    }
 }
 
 @media (max-width: 574px) {
+   // GLOBAL STYLES
    .wrapper {
       width: 90%;
    }
 
+   // HEADER STYLES
    header {
       h1 {
          @include base-font(65);
@@ -97,6 +102,8 @@
          width: 90px;
       }
    }
+
+   // CATEGORY SECTION STYLES
    .category-form {
       display: block;
       label {
@@ -105,12 +112,13 @@
       }
    }
 
-   // change width of answer box
+   // ANSWER SECTION STYLES
+   // Change the width of the answer labels
    .answer-box {
       width: 85%;
       margin: 0 auto;
    }
-   // change icon sizes
+   // Change the right and wrong icon styles 
    .correct::after,
    .incorrect::after {
       @include base-font(35);
@@ -120,7 +128,8 @@
 }
 
 @media(max-width: 495px) {
-   // move photo on top of header text
+   // HEADER STYLES
+   // Remove smartypants from header
    header {
       .main-heading {
          @include flex(column-reverse);
@@ -135,6 +144,7 @@
 }
 
 @media(max-width: 400px) {
+   // HEADER STYLES
    header {
       h1 {
          @include base-font(50);
@@ -146,7 +156,7 @@
       }
    }
 
-   // main section
+   // MAIN SECTION
    h2 {
       @include base-font(40);
    }
@@ -158,7 +168,7 @@
       padding: 10px 20px;          
    }
 
-   // results section
+   // RESULTS SECTION STYLES
    .results {
       height: 100vh;
       width: 100vw;
