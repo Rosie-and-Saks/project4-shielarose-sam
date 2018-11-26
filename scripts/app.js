@@ -54,7 +54,8 @@ app.getQuestions = function(category){
        })
 
 //listen for when user clicks on 'show results' button:
-       $(".see-results").on("click", function() {
+       $(".see-results").on("click", function(e) {
+           e.preventDefault();
            app.showResult();
        })
    });
@@ -105,8 +106,8 @@ app.playAgain = function() {
 
 //function to display quiz question/multiple choices on page when user selects category:
 app.updateQuestion = function(question){
-    // Create an array of all the answers
-    app.answers = [];
+// Create an array of all the answers
+   app.answers = [];
 
 // create a variable for the correct answer:
    app.correctAnswer = question[app.questionCount].correct_answer;
