@@ -62,6 +62,7 @@ h2 {
    }
    .answer-option {
       @include button($heading-color);
+      display: block;
       margin: 7px 0;
       padding: 20px;
       width: 100%;

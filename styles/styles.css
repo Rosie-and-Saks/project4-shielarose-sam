@@ -423,6 +423,7 @@ h2 {
     transition: all 0.15s ease;
     -webkit-box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
     box-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f, 3px 3px 0 #0f0f0f;
+    display: block;
     margin: 7px 0;
     padding: 20px;
     width: 100%; }
